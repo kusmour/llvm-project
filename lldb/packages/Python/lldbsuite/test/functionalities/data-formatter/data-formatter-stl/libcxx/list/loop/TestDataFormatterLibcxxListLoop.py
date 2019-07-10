@@ -18,7 +18,6 @@ class LibcxxListDataFormatterTestCase(TestBase):
     NO_DEBUG_INFO_TESTCASE = True
 
     @add_test_categories(["libc++"])
-    @expectedFailureAndroid(bugnumber="llvm.org/pr32592")
     def test_with_run_command(self):
         self.build()
         exe = self.getBuildArtifact("a.out")
