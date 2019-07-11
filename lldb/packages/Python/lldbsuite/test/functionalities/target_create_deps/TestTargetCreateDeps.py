@@ -30,7 +30,6 @@ class TargetDependentsTestCase(TestBase):
         self.expect(
             "image list", msg, matching=should_match, substrs=['[  1]'])
 
-
     @expectedFailureAll(oslist=["linux"],
         triple=no_match(".*-android"))
         #linux does not support loading dependent files, but android does
