@@ -219,9 +219,6 @@ public:
         m_option_group(), m_arch_option(),
         m_core_file(LLDB_OPT_SET_1, false, "core", 'c', 0, eArgTypeFilename,
                     "Fullpath to a core file to use for this target."),
-        m_platform_path(LLDB_OPT_SET_1, false, "platform-path", 'P', 0,
-                        eArgTypePath,
-                        "Path to the remote file to use for this target."),
         m_symbol_file(LLDB_OPT_SET_1, false, "symfile", 's', 0,
                       eArgTypeFilename,
                       "Fullpath to a stand alone debug "
@@ -247,7 +244,6 @@ public:
 
     m_option_group.Append(&m_arch_option, LLDB_OPT_SET_ALL, LLDB_OPT_SET_1);
     m_option_group.Append(&m_core_file, LLDB_OPT_SET_ALL, LLDB_OPT_SET_1);
-    m_option_group.Append(&m_platform_path, LLDB_OPT_SET_ALL, LLDB_OPT_SET_1);
     m_option_group.Append(&m_symbol_file, LLDB_OPT_SET_ALL, LLDB_OPT_SET_1);
     m_option_group.Append(&m_remote_file, LLDB_OPT_SET_ALL, LLDB_OPT_SET_1);
     m_option_group.Append(&m_add_dependents, LLDB_OPT_SET_ALL, LLDB_OPT_SET_1);
@@ -472,7 +468,6 @@ private:
   OptionGroupOptions m_option_group;
   OptionGroupArchitecture m_arch_option;
   OptionGroupFile m_core_file;
-  OptionGroupFile m_platform_path;
   OptionGroupFile m_symbol_file;
   OptionGroupFile m_remote_file;
   OptionGroupDependents m_add_dependents;
